@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+
+<AnchorPane fx:id="send_mail_scene" prefHeight="600.0" prefWidth="747.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SendEmail">
+   <children>
+      <Pane layoutX="53.0" layoutY="65.0" prefHeight="493.0" prefWidth="641.0" style="-fx-background-color: white;">
+         <effect>
+            <DropShadow spread="0.09" />
+         </effect>
+         <children>
+            <JFXButton fx:id="send_email" cancelButton="true" layoutX="189.0" layoutY="409.0" prefHeight="36.0" prefWidth="263.0" style="-fx-background-color: #5091fa;" text="SEND EMAIL" textFill="WHITE" />
+            <JFXTextField fx:id="r_email" layoutX="194.0" layoutY="133.0" prefHeight="25.0" prefWidth="358.0" />
+            <JFXTextField fx:id="r_subject" layoutX="194.0" layoutY="202.0" prefHeight="25.0" prefWidth="358.0" />
+            <JFXTextField fx:id="r_body" layoutX="194.0" layoutY="287.0" prefHeight="25.0" prefWidth="358.0" />
+            <ImageView fitHeight="36.0" fitWidth="32.0" layoutX="80.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-new-post-40.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="32.0" fitWidth="42.0" layoutX="80.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-user-40.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="36.0" fitWidth="32.0" layoutX="80.0" layoutY="296.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-sms-40.png" />
+               </image>
+            </ImageView>
+            <JFXRadioButton fx:id="ssl" layoutX="189.0" layoutY="355.0" text="SSL" />
+            <JFXRadioButton fx:id="tls" layoutX="350.0" layoutY="355.0" text="TLS" />
+            <Pane prefHeight="42.0" prefWidth="641.0" style="-fx-background-color: #5091fa;">
+               <children>
+                  <JFXButton fx:id="log_out" layoutX="524.0" layoutY="5.0" prefHeight="32.0" prefWidth="103.0" text="Log out" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="19.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8-exit-16.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </Pane>
+            <JFXProgressBar fx:id="progress" layoutX="6.0" layoutY="50.0" prefHeight="7.0" prefWidth="627.0" />
+         </children>
+      </Pane>
+   </children>
+   <effect>
+      <DropShadow />
+   </effect>
+</AnchorPane>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="main_scene" minHeight="-Infinity" prefHeight="600.0" prefWidth="747.0" style="-fx-background-color: #ECECEC;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Pane layoutX="104.0" layoutY="44.0" prefHeight="460.0" prefWidth="540.0" style="-fx-background-color: white;">
+         <children>
+            <JFXButton fx:id="login" layoutX="116.0" layoutY="358.0" prefHeight="35.0" prefWidth="309.0" style="-fx-background-color: #5091fa;" text="Sign In" textFill="WHITE" />
+            <JFXPasswordField fx:id="password" layoutX="148.0" layoutY="236.0" prefHeight="25.0" prefWidth="248.0" />
+            <JFXTextField fx:id="gmail" layoutX="148.0" layoutY="136.0" prefHeight="25.0" prefWidth="248.0" />
+            <ImageView fitHeight="35.0" fitWidth="80.0" layoutX="105.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-new-post-40.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="35.0" fitWidth="80.0" layoutX="105.0" layoutY="244.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-password-40.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="35.0" fitWidth="48.0" layoutX="38.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-box-important-40.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="85.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to use this app go to your gmail account and make sure Less secure app accessis off to allow this app send email instead of gmail" wrappingWidth="417.28125" />
+         </children>
+         <effect>
+            <DropShadow radius="7.775" width="12.1" />
+         </effect>
+      </Pane>
+   </children>
+</AnchorPane>
