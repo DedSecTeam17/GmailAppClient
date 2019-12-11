@@ -42,21 +42,27 @@ public class MailProvider {
 
         try {
 
-            Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(username));
-            message.setRecipients(
-                    Message.RecipientType.TO,
-                    InternetAddress.parse(receiverEmail)
-            );
-            message.setSubject(title);
-            message.setText(content);
-            Transport.send(message);
-            System.out.println("Done");
-            return  true;
+            return sendMail(receiverEmail, title, content, username, session);
         } catch (MessagingException e) {
             e.printStackTrace();
-            return  false;
+            return false;
         }
+    }
+
+    private boolean sendMail(String receiverEmail, String title, String content, String username, Session session) throws MessagingException {
+        Message message = new MimeMessage(session);
+
+
+        message.setFrom(new InternetAddress(username));
+        message.setRecipients(
+                Message.RecipientType.TO,
+                InternetAddress.parse(receiverEmail)
+        );
+        message.setSubject(title);
+        message.setText(content);
+        Transport.send(message);
+        System.out.println("Done");
+        return true;
     }
 
     public boolean sendMailUsingSsl(String receiverEmail, String title, String content) {
@@ -79,22 +85,11 @@ public class MailProvider {
 
         try {
 
-            Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(username));
-            message.setRecipients(
-                    Message.RecipientType.TO,
-                    InternetAddress.parse(receiverEmail)
-            );
-            message.setSubject(title);
-            message.setText(content);
-            Transport.send(message);
-            System.out.println("Done");
-            return  true;
+            return sendMail(receiverEmail, title, content, username, session);
         } catch (MessagingException e) {
             e.printStackTrace();
-            return  true;
+            return true;
 
         }
     }
-
 }

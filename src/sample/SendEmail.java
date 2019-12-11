@@ -42,6 +42,8 @@ public class SendEmail implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+
+        progress.setVisible(false);
         toggleGroup = new ToggleGroup();
         ssl.setToggleGroup(toggleGroup);
         ssl.setSelected(true);
@@ -80,7 +82,6 @@ public class SendEmail implements Initializable {
                         boolean sent = MailProvider.getInstance().sendMailUsingTransportLayer(r_email.getText().trim(), r_subject.getText().trim(), r_body.getText().trim());
                         if (sent) {
                             showAlert();
-
                         }
 
                         this.stop();

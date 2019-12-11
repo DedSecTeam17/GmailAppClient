@@ -16,15 +16,18 @@ public class Main extends Application {
 
         Parent root;
 
+
+        System.out.println(UserSession.getInstance().weHaveAuser());
+
         if ( UserSession.getInstance().weHaveAuser()) {
                   root = FXMLLoader.load(getClass().getResource("./send_email.fxml"));
 
         }else {
-            root   = FXMLLoader.load(getClass().getResource("./sample.fxml"));
+              root   = FXMLLoader.load(getClass().getResource("./sample.fxml"));
 
         }
 
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Email App");
         primaryStage.setScene(new Scene(root, 747, 600));
         primaryStage.show();
     }

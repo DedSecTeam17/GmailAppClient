@@ -1,9 +1,10 @@
 package sample.singletons;
-
 import sample.models.UserInfo;
-
 import java.util.prefs.Preferences;
 
+
+
+/////<---*||*--->/////
 public class UserSession {
     private static UserSession ourInstance = new UserSession();
     private static Preferences preferences = Preferences.userRoot().node(UserSession.class.getName());
@@ -29,8 +30,13 @@ public class UserSession {
 
 
     public boolean weHaveAuser() {
+
+        System.out.println(preferences.get("email", null));
+        System.out.println(preferences.get("password", null));
+
+
         try {
-            return preferences.get("email", "session") != null && preferences.get("password", "session") != null;
+            return preferences.get("email", null) != null && preferences.get("password", null) != null;
         } catch (Exception e) {
             return false;
         }
